@@ -1,5 +1,7 @@
 # AndroidMovieBox
 
+<img src="art/Main_Screen_framed.png" width="360"> <img src="art/Movie_Details_Screen_framed.png" width="360">
+
 ## Architecture
 - Clean Architecture
 - MVVM
@@ -29,9 +31,6 @@
 - Screenshot tests
     * Using Screenshot and ScreenCaptureProcessor to capture screenshots
     * Created custom gradle tasks for pulling screenshots from the device
-
-## Screenshots
-<img src="art/Main_Screen_framed.png" width="360"> <img src="art/Movie_Details_Screen_framed.png" width="360">
 
 # License
 
