@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.patrykkosieradzki.moviebox.R" />
+        <import type="com.patrykkosieradzki.moviebox.utils.GlideImageWrapper" />
+
+        <variable
+            name="vm"
+            type="com.patrykkosieradzki.moviebox.ui.list.MovieListViewModel" />
+
+        <variable
+            name="playingNowMoviesBinding"
+            type="me.tatarka.bindingcollectionadapter2.ItemBinding&lt;GlideImageWrapper>" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_65"
+            android:background="@color/dark_brown"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_24"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dimen_24"
+                android:layout_marginBottom="@dimen/dimen_19"
+                app:srcCompat="@drawable/ic_moviebox_logo" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/HelveticaNeue.Yellow.12"
+            android:background="@color/dark_grey"
+            android:paddingStart="@dimen/dimen_19"
+            android:paddingTop="@dimen/dimen_4"
+            android:paddingBottom="@dimen/dimen_3"
+            android:text="@string/playing_now"
+            tools:ignore="RtlSymmetry" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/dark_brown"
+            app:itemBinding="@{playingNowMoviesBinding}"
+            app:items="@{vm.viewState.nowPlayingMoviesPosterUrls}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/movie_poster_item" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/HelveticaNeue.Yellow.12"
+            android:background="@color/dark_grey"
+            android:paddingStart="@dimen/dimen_19"
+            android:paddingTop="@dimen/dimen_4"
+            android:paddingBottom="@dimen/dimen_3"
+            android:text="@string/most_popular"
+            tools:ignore="RtlSymmetry" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/movies_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_brown"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/movie_item" />
+
+    </LinearLayout>
+</layout>

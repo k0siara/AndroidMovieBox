@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="HelveticaNeue">
+        <item name="android:fontFamily">@font/helvetica_neue</item>
+    </style>
+
+    <style name="HelveticaNeue.Bold">
+        <item name="android:fontFamily">@font/helvetica_neue_bold</item>
+    </style>
+
+    <style name="HelveticaNeue.Grey">
+        <item name="android:textColor">@color/light_grey</item>
+    </style>
+
+    <style name="HelveticaNeue.DarkBrown">
+        <item name="android:textColor">@color/dark_brown</item>
+    </style>
+
+    <style name="HelveticaNeue.Yellow">
+        <item name="android:textColor">@color/light_yellow</item>
+    </style>
+
+    <style name="HelveticaNeue.Bold.Grey">
+        <item name="android:textColor">@color/light_grey</item>
+    </style>
+
+    <style name="HelveticaNeue.Grey.12">
+        <item name="android:textSize">@dimen/font_size_12</item>
+    </style>
+
+    <style name="HelveticaNeue.Yellow.12">
+        <item name="android:textSize">@dimen/font_size_12</item>
+    </style>
+
+    <style name="HelveticaNeue.DarkBrown.12">
+        <item name="android:textSize">@dimen/font_size_12</item>
+    </style>
+
+    <style name="HelveticaNeue.Bold.Grey.14">
+        <item name="android:textSize">@dimen/font_size_14</item>
+    </style>
+
+    <style name="HelveticaNeue.Bold.Grey.16">
+        <item name="android:textSize">@dimen/font_size_16</item>
+    </style>
+
+</resources>

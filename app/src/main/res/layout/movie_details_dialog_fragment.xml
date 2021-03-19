@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.patrykkosieradzki.moviebox.ui.details.MovieDetailsViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_transparent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/arrow_left"
+                onClick="@{vm::onBackArrowClicked}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_18"
+                android:layout_marginTop="@dimen/dimen_29"
+                android:clickable="true"
+                android:focusable="true"
+                app:srcCompat="@drawable/ic_arrow_left" />
+
+            <ImageView
+                android:id="@+id/poster_image"
+                glideImage="@{vm.viewState.posterUrl}"
+                android:layout_width="@dimen/dimen_135"
+                android:layout_height="@dimen/dimen_201"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimen_24"
+                android:background="@drawable/poster_border_2dp"
+                android:clickable="true"
+                android:focusable="true"
+                tools:src="@drawable/example_poster" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimen_6"
+                nullableText="@{vm.viewState.title}"
+                android:textAppearance="@style/HelveticaNeue.Bold.Grey.16"
+                tools:text="Avengers: Endgame" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                nullableText="@{vm.viewState.releaseDate + `  -  ` + vm.viewState.duration}"
+                android:textAppearance="@style/HelveticaNeue.Grey.12"
+                tools:text="April 26, 2019  -  3h 1m" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="@dimen/dimen_33"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:text="@string/overview"
+                android:textAppearance="@style/HelveticaNeue.Bold.Grey.16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginHorizontal="@dimen/dimen_33"
+                android:layout_marginTop="@dimen/dimen_20"
+                nullableText="@{vm.viewState.overview}"
+                android:textAppearance="@style/HelveticaNeue.Grey.12"
+                tools:text="@tools:sample/lorem/random" />
+
+            <com.google.android.flexbox.FlexboxLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:flexDirection="row"
+                app:flexWrap="wrap"
+                app:showDivider="middle"
+                app:alignContent="space_between"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:layout_marginHorizontal="@dimen/dimen_26"
+                textChips="@{vm.viewState.genres}" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

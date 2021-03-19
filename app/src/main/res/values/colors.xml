@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">@color/dark_brown</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="very_dark_brown">#121212</color>
+    <color name="dark_brown">#212121</color>
+    <color name="light_yellow">#fcd052</color>
+    <color name="light_grey">#cdcdcd</color>
+    <color name="medium_grey">#828282</color>
+    <color name="dark_grey">#404040</color>
+
+    <color name="rating_view_progress_background_green">#BE246C25</color>
+    <color name="rating_view_progress_background_yellow">#D7858307</color>
+    <color name="rating_view_progress_green">#41DF43</color>
+    <color name="rating_view_progress_yellow">#DDDA00</color>
+
+    <color name="black_transparent">#B3000000</color>
+</resources>

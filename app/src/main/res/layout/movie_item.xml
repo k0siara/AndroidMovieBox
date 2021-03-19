@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.patrykkosieradzki.moviebox.ui.list.MovieItem" />
+
+        <variable
+            name="item"
+            type="com.patrykkosieradzki.moviebox.ui.list.MovieItem" />
+
+        <variable
+            name="listener"
+            type="com.patrykkosieradzki.moviebox.utils.OnItemClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        onClick="@{() -> listener.onClick(item)}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_brown"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/poster"
+            glideImage="@{item.posterUrl}"
+            android:layout_width="@dimen/dimen_47"
+            android:layout_height="@dimen/dimen_71"
+            android:layout_marginStart="@dimen/dimen_24"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:layout_marginBottom="@dimen/dimen_6"
+            android:background="@drawable/poster_border_1dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:srcCompat="@drawable/example_poster" />
+
+        <TextView
+            android:id="@+id/title"
+            nullableText="@{item.title}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_18"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:layout_marginEnd="@dimen/dimen_20"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintHorizontal_bias="0"
+            android:textAppearance="@style/HelveticaNeue.Bold.Grey.14"
+            app:layout_constraintEnd_toStartOf="@+id/rating"
+            app:layout_constraintStart_toEndOf="@+id/poster"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Title" />
+
+        <TextView
+            android:id="@+id/releaseDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_6"
+            android:text="@{item.releaseDate}"
+            android:textAppearance="@style/HelveticaNeue.Grey.12"
+            app:layout_constraintStart_toStartOf="@+id/title"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            tools:text="April 12, 2019" />
+
+        <TextView
+            android:id="@+id/duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/empty"
+            android:textAppearance="@style/HelveticaNeue.Grey.12"
+            app:layout_constraintStart_toStartOf="@+id/releaseDate"
+            app:layout_constraintTop_toBottomOf="@+id/releaseDate"
+            tools:text="3h 1m" />
+
+        <com.patrykkosieradzki.moviebox.ui.custom.RatingView
+            android:id="@+id/rating"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:percentage="50" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

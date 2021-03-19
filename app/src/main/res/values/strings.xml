@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MovieBox</string>
+
+    <string name="general_error_message">Service not available, try again later</string>
+    <string name="not_provided">Not provided</string>
+    <string name="error">Oops…</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="playing_now">Playing now</string>
+    <string name="most_popular">Most popular</string>
+    <string name="empty">-</string>
+    <string name="overview">Overview</string>
+</resources>

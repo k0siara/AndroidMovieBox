@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <stroke
+        android:width="@dimen/dimen_2"
+        android:color="@color/medium_grey" />
+    <padding
+        android:left="@dimen/dimen_2"
+        android:top="@dimen/dimen_2"
+        android:right="@dimen/dimen_2"
+        android:bottom="@dimen/dimen_2" />
+</shape>
